@@ -11,13 +11,22 @@
     />
   </head>
   <style>
-    body {
-      background-color: #f08d86;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .landing-page {
+      background-image: linear-gradient(to top right, #051937, #004d7a, #008793, #00bf72, #a8eb12);
       font-family: "Poppins", sans-serif;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+      height: 100vh;
+      overflow: hidden;
+      color: white;
     }
     h1 {
       margin: 50px;
@@ -29,11 +38,14 @@
     }
     p {
       font-size: 20px;
+      padding-bottom: 20vh;
     }
   </style>
   <body>
-    <h1>Beware: Awesomeness coming soon to a personal site near you!</h1>
-    <h2>Sometime this winterbreak, 2020</h2>
-    <p>Sponsored by: perfectionism (tm) and the need to have a great website on the first go</p>
+    <div class="landing-page">
+      <h1>Beware: Awesomeness coming soon to a personal site near you!</h1>
+      <h2>Sometime this winterbreak, 2020</h2>
+      <p>Sponsored by: perfectionism (tm) and the need to have a great website on the first go</p>
+    </div>
   </body>
 </html>
