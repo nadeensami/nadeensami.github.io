@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
+
+.landing-page {
+  background-image: linear-gradient(to right top, #e288b8, #cf9bdb, #b2aff4, #93c2ff, #7cd2ff);
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100vh;
+  color: white;
+  text-shadow: 4px 4px rgba(0, 0, 0, 0.188);
+  padding: 10vh;
+}
+h1 {
+  color: white;
+  font-size: 4rem;
+  padding: 1rem;
+}
+h2 {
+  font-size: 3rem;
+  padding: 1rem;
+}
+p {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+button {
+  border: 3px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 2rem;
+  border-radius: 100px;
+  color: white;
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.188);
+  align-self: center;
+  cursor: pointer;
+  padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 60%;
+  }
+}
