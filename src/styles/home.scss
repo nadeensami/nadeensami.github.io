@@ -1,0 +1,148 @@
+// import global variables
+@import "vars";
+
+// local variables
+$big-num: rgba(255, 255, 255, 0.1);
+
+.home {
+  padding-top: 5em;
+  background: $home-bg;
+  color: $text-light;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+
+  .main {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+  }
+
+  .text {
+    padding: 20vh 0 0 10vw;
+    z-index: 3;
+
+    h2 {
+      font-size: 64px;
+      font-weight: 300;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 100;
+    }
+  }
+
+  .btn-container {
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    padding-left: calc(clamp(20em, 25vw, 40em) - 7vw);
+  }
+
+  .work-btn {
+    width: 154px;
+    height: 54px;
+    position: relative;
+
+    .btn-outline {
+      position: absolute;
+      top: -58%;
+      left: -26%;
+
+      rect {
+        transition: all 0.8s ease;
+        stroke: #b8dfe8;
+        stroke-dasharray: 383;
+        stroke-width: 2;
+      }
+    }
+
+    .btn-text {
+      position: absolute;
+      top: 50%;
+      transform: translate(1.6em, -50%);
+    }
+
+    &:hover,
+    &:focus,
+    a:hover,
+    a:focus {
+      rect {
+        stroke-dasharray: 100;
+        stroke-dashoffset: -50;
+      }
+    }
+  }
+
+  .villain-img {
+    position: absolute;
+    bottom: -10%;
+    // right: -10%;
+    left: calc(clamp(20em, 25vw, 40em) + 25vw);
+  }
+
+  .bg-number {
+    position: absolute;
+    font-size: 25em;
+    color: $big-num;
+    left: -10%;
+    bottom: 10%;
+    line-height: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    width: clamp(20em, 25vw, 40em);
+    background: $home-accent;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    background: $home-accent;
+    overflow-x: hidden;
+    height: 120vh;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      .text {
+        padding-top: 10vh;
+        padding-left: 0;
+      }
+      h2 {
+        text-align: center;
+        font-size: 3.25em;
+      }
+
+      h3 {
+        text-align: center;
+        font-size: 1.25em;
+      }
+    }
+
+    .btn-container {
+      padding-left: 0;
+      justify-content: center;
+    }
+
+    .villain-img {
+      right: unset;
+      left: unset;
+      bottom: -35%;
+    }
+
+    .bg-number {
+      bottom: 40%;
+    }
+  }
+}

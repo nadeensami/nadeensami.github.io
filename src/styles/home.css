@@ -1,0 +1,149 @@
+.home {
+  padding-top: 5em;
+  background: #184751;
+  color: #b8dfe8;
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.home .main {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+.home .text {
+  padding: 20vh 0 0 10vw;
+  z-index: 3;
+}
+
+.home .text h2 {
+  font-size: 64px;
+  font-weight: 300;
+}
+
+.home .text h3 {
+  font-size: 24px;
+  font-weight: 100;
+}
+
+.home .btn-container {
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: calc(clamp(20em, 25vw, 40em) - 7vw);
+}
+
+.home .work-btn {
+  width: 154px;
+  height: 54px;
+  position: relative;
+}
+
+.home .work-btn .btn-outline {
+  position: absolute;
+  top: -58%;
+  left: -26%;
+}
+
+.home .work-btn .btn-outline rect {
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+  stroke: #b8dfe8;
+  stroke-dasharray: 383;
+  stroke-width: 2;
+}
+
+.home .work-btn .btn-text {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(1.6em, -50%);
+          transform: translate(1.6em, -50%);
+}
+
+.home .work-btn:hover rect, .home .work-btn:focus rect,
+.home .work-btn a:hover rect,
+.home .work-btn a:focus rect {
+  stroke-dasharray: 100;
+  stroke-dashoffset: -50;
+}
+
+.home .villain-img {
+  position: absolute;
+  bottom: -10%;
+  left: calc(clamp(20em, 25vw, 40em) + 25vw);
+}
+
+.home .bg-number {
+  position: absolute;
+  font-size: 25em;
+  color: rgba(255, 255, 255, 0.1);
+  left: -10%;
+  bottom: 10%;
+  line-height: 0;
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: clamp(20em, 25vw, 40em);
+  background: #102f36;
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    background: #102f36;
+    overflow-x: hidden;
+    height: 120vh;
+  }
+  .home .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .home .main .text {
+    padding-top: 10vh;
+    padding-left: 0;
+  }
+  .home .main h2 {
+    text-align: center;
+    font-size: 3.25em;
+  }
+  .home .main h3 {
+    text-align: center;
+    font-size: 1.25em;
+  }
+  .home .btn-container {
+    padding-left: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .home .villain-img {
+    right: unset;
+    left: unset;
+    bottom: -35%;
+  }
+  .home .bg-number {
+    bottom: 40%;
+  }
+}
+/*# sourceMappingURL=home.css.map */

@@ -1,16 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;800&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-}
-
 nav {
+  position: fixed;
+  top: 0;
+  -webkit-transition: top 0.5s ease;
+  transition: top 0.5s ease;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,28 +16,53 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-nav .logo,
-nav .contact-btn {
-  border: 1px solid #b8dfe8;
-  padding: 0.7em;
-  border-radius: 10px;
-  cursor: pointer;
+  z-index: 18;
 }
 
 nav .logo {
-  border: 2px solid #b8dfe8;
+  position: relative;
   font-weight: 500;
+  margin: 0.75em 0.75em;
+}
+
+nav .logo .logo-outline {
+  position: absolute;
+  top: -55%;
+  left: -50%;
+  pointer-events: none;
+}
+
+nav .logo .logo-outline rect {
+  -webkit-transition: stroke-dasharray 0.8s ease;
+  transition: stroke-dasharray 0.8s ease;
+  stroke: #b8dfe8;
+  stroke-dasharray: 183;
+  stroke-width: 2;
+}
+
+nav .logo a:hover,
+nav .logo a:focus {
+  border-bottom: none;
+  color: white;
+}
+
+nav .logo a:hover rect,
+nav .logo a:focus rect {
+  stroke: white;
+  stroke-dasharray: 50;
 }
 
 nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  width: clamp(500px, 40vw, 800px);
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: clamp(25em, 30vw, 35em);
   font-weight: lighter;
 }
 
@@ -52,36 +70,40 @@ nav li {
   text-decoration: none;
   list-style: none;
   position: relative;
+  outline: none;
 }
 
-nav li:hover {
+nav li a:hover,
+nav li a:focus {
   color: white;
-}
-
-nav li:not(:last-child):hover {
   border-bottom: 1px solid white;
 }
 
-nav .contact-btn:hover {
-  border: 1px solid #fff;
+nav .contact-btn {
+  border: 1px solid #b8dfe8;
+  border-radius: 10px;
+  padding: 0.7em;
 }
 
-nav a {
-  text-decoration: none;
-  color: inherit;
+nav .contact-btn:hover {
+  border: 1px solid white;
+}
+
+nav .contact-btn a:hover,
+nav .contact-btn a:focus {
+  border-bottom: none;
+}
+
+.nav__hidden {
+  top: -15vh;
 }
 
 @media screen and (max-width: 760px) {
-  nav {
-    position: relative;
-  }
-  .hamburger {
-    position: absolute;
-    right: 10vw;
+  nav .hamburger {
     cursor: pointer;
     z-index: 20;
   }
-  .line {
+  nav .line {
     width: 30px;
     height: 3px;
     margin: 5px;
@@ -132,12 +154,12 @@ nav a {
     -webkit-transition: opacity 0.5s ease 0.8s;
     transition: opacity 0.5s ease 0.8s;
   }
-  .open {
+  nav .open {
     clip-path: circle(160% at 90% -10%);
     -webkit-clip-path: circle(160% at 90% -10%);
     pointer-events: all;
   }
-  .open li {
+  nav .open li {
     opacity: 1;
   }
 }
